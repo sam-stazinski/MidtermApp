@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MidtermApp</string>
+    <string name="main_greeting">Welcome to the Guessing Game!</string>
+    <string name="main_play_btn">Play Game</string>
+    <string name="main_view_high_scores_btn">View High Scores</string>
+    <string name="number_of_attempts_title">Number Of Attemtps:</string>
+
+    <string name="num_of_attempts">MidtermApp</string>
+    <string name="player_name">MidtermApp</string>
+
+</resources>

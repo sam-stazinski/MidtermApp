@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml">
+
+    <activity
+        android:id="@+id/activity_main"
+        android:name="com.example.midtermapp.MainActivity"
+        tools:layout="@layout/activity_main">
+
+        <argument
+            android:name="numOfAttempts"
+            app:argType="integer"
+            android:defaultValue="0"/>
+        <argument
+            android:name="playerName"
+            app:argType="string"
+            android:defaultValue="unknown"/>
+    </activity>
+
+    <fragment
+        android:id = "@+id/fragment1_container"
+        android:name = "com.example.midtermapp.Fragment1"
+        tools:layout = "@layout/game_fragment_one">
+
+
+        <action
+            android:id="@+id/action_fragment1_container_to_activity_main"
+            app:destination="@id/activity_main" />
+        <argument
+            android:name="numOfAttempts"
+            app:argType="integer"
+            android:defaultValue="0"/>
+        <argument
+            android:name="playerName"
+            app:argType="string"
+            android:defaultValue="unknown"/>
+    </fragment>
+
+
+</navigation>
