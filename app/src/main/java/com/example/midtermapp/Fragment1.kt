@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.midtermapp.database.dao.AppDatabase
+import com.example.midtermapp.database.entities.Score
 import com.example.midtermapp.databinding.GameFragmentOneBinding
 
 
@@ -125,6 +127,17 @@ class Fragment1 : Fragment() {
                     val num = viewModel.numOfAttempts.value
                     val name = binding.etName.text
                     Log.d("Value", "From Fragment1 $num $name")
+
+                    val database = AppDatabase.getDatabase(requireContext())
+                    val scoreDao1 = database.scoreDao()
+
+                    val newScore = Score(
+                        uid = 0,
+                        playerName = name,
+                        numOfAttempts = num)
+
+                    scoreDao1.insert(newScore)
+
 
                     // Had to do this inorder to have default values for safeargs
                     this.findNavController().navigate(Fragment1Directions.actionFragment1ContainerToActivityMain().apply {
